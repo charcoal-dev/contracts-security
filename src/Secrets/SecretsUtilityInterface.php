@@ -6,6 +6,8 @@
 
 declare(strict_types=1);
 
+namespace Charcoal\Contracts\Security\Secrets;
+
 /**
  * Defines a contract for requesting secrets from implemented classes.
  */

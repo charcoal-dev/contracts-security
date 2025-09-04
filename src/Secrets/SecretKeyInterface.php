@@ -6,8 +6,10 @@
 
 declare(strict_types=1);
 
+namespace Charcoal\Contracts\Security\Secrets;
+
 use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
-use Charcoal\Contracts\Security\Cipher\Cipher\CipherBindingEnumInterface;
+use Charcoal\Contracts\Security\Cipher\CipherBindingEnumInterface;
 
 /**
  * Represents an interface for a secret key, extending the sensitive key buffer capabilities.
