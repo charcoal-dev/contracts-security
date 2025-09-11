@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Charcoal\Contracts\Security\Secrets;
 
-use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
-
 /**
  * Interface representing a storage mechanism for managing secrets, allowing
  * organized access, retrieval, insertion, and deletion of secrets by their identifiers.
