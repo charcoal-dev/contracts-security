@@ -62,10 +62,10 @@ interface SecretStorageInterface
      * Stores a secret key in the storage.
      */
     public function store(
-        ?SecretNamespaceInterface   $namespace,
-        string                      $id,
-        int                         $version,
-        SensitiveKeyBufferInterface $key
+        ?SecretNamespaceInterface $namespace,
+        string                    $id,
+        int                       $version,
+        SecretGeneratorInterface  $key
     ): void;
 
     /**

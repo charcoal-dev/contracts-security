@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Charcoal\Contracts\Security\Secrets;
 
-use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
-
 /**
  * This interface defines methods to retrieve, store, delete, and check for the existence of secret keys.
  * It also includes a method for listing all available keys within the namespace.
@@ -20,7 +18,7 @@ interface SecretNamespaceInterface
 
     public function load(string $id, int $version): SecretKeyInterface;
 
-    public function store(string $id, int $version, SensitiveKeyBufferInterface $key): void;
+    public function store(string $id, int $version, SecretGeneratorInterface $key): void;
 
     public function delete(string $id, int $version): void;
 
