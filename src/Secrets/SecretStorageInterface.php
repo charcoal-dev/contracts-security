@@ -17,6 +17,11 @@ use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
 interface SecretStorageInterface
 {
     /**
+     * A unique identifier of sorts for the storage provider
+     */
+    public function metaId(): string;
+
+    /**
      * Returns a namespace for managing secrets.
      */
     public function namespace(string $path): SecretNamespaceInterface;

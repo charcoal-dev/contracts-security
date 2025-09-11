@@ -16,6 +16,8 @@ use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
  */
 interface SecretNamespaceInterface
 {
+    public function refId(): string;
+
     public function load(string $id, int $version): SecretKeyInterface;
 
     public function store(string $id, int $version, SensitiveKeyBufferInterface $key): void;
