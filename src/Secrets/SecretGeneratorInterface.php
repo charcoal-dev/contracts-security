@@ -14,5 +14,7 @@ namespace Charcoal\Contracts\Security\Secrets;
  */
 interface SecretGeneratorInterface
 {
-    public static function generate(int $length): string;
+    public static function size(): int;
+
+    public static function generate(): string;
 }
