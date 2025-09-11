@@ -23,9 +23,4 @@ interface SecretNamespaceInterface
     public function delete(string $id, int $version): void;
 
     public function has(string $id, int $version): bool;
-
-    /**
-     * string[] List of secret keys in the namespace.
-     */
-    public function list(): array;
 }

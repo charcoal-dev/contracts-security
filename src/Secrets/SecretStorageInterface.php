@@ -65,9 +65,4 @@ interface SecretStorageInterface
         int                       $version,
         SecretGeneratorInterface  $generator
     ): void;
-
-    /**
-     * string[] List of secret keys in the root of storage.
-     */
-    public function list(?SecretNamespaceInterface $namespace): array;
 }
