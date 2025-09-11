@@ -16,15 +16,47 @@ use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
  */
 interface SecretStorageInterface
 {
+    /**
+     * Returns a namespace for managing secrets.
+     */
     public function namespace(string $path): SecretNamespaceInterface;
 
-    public function get(string $id, int $version): SecretKeyInterface;
+    /**
+     * Loads a secret key from the storage.
+     */
+    public function load(
+        string                    $id,
+        int                       $version,
+        ?SecretNamespaceInterface $namespace
+    ): SecretKeyInterface;
 
-    public function store(string $id, int $version, SensitiveKeyBufferInterface $key): void;
+    /**
+     * Deletes a secret key from the storage.
+     */
+    public function delete(
+        string                    $id,
+        int                       $version,
+        ?SecretNamespaceInterface $namespace
+    ): void;
 
-    public function delete(string $id, int $version): void;
+    /**
+     * Checks for the existence of a secret key in the storage.
+     */
+    public function has(
+        string                    $id,
+        int                       $version,
+        ?SecretNamespaceInterface $namespace
+    ): bool;
 
-    public function has(string $id, int $version): bool;
+    /**
+     * Stores a secret key in the storage.
+     */
+    public function store(
+        ?SecretNamespaceInterface   $namespace,
+        string                      $id,
+        int                         $version,
+        SensitiveKeyBufferInterface $key
+    ): void;
 
     /**
      * string[] List of secret keys in the root of storage.
