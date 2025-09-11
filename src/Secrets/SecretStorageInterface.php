@@ -61,5 +61,5 @@ interface SecretStorageInterface
     /**
      * string[] List of secret keys in the root of storage.
      */
-    public function list(): array;
+    public function list(?SecretNamespaceInterface $namespace): array;
 }
