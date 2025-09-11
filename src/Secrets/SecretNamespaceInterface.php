@@ -18,7 +18,7 @@ interface SecretNamespaceInterface
 
     public function load(string $id, int $version): SecretKeyInterface;
 
-    public function store(string $id, int $version, SecretGeneratorInterface $key): void;
+    public function store(string $id, int $version, SecretGeneratorInterface $generator): void;
 
     public function delete(string $id, int $version): void;
 

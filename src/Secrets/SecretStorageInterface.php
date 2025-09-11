@@ -65,7 +65,7 @@ interface SecretStorageInterface
         ?SecretNamespaceInterface $namespace,
         string                    $id,
         int                       $version,
-        SecretGeneratorInterface  $key
+        SecretGeneratorInterface  $generator
     ): void;
 
     /**
