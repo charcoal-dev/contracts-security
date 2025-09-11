@@ -22,6 +22,11 @@ interface SecretStorageInterface
     public function metaId(): string;
 
     /**
+     * Return the trust FQCN register for this storage/provider.
+     */
+    public function trustedFqcn(): TrustedFqcnInterface;
+
+    /**
      * Returns a namespace for managing secrets.
      */
     public function namespace(string $path): SecretNamespaceInterface;
