@@ -19,7 +19,5 @@ interface SecretKeyInterface extends SensitiveKeyBufferInterface
 
     public function version(): int;
 
-    public function size(): int;
-
     public function request(SecretsUtilityInterface $class, string $method, null|string|object $subject): object;
 }
