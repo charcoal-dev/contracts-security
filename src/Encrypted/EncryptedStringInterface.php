@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Charcoal\Contracts\Security\Encrypted;
 
-use Charcoal\Contracts\Buffers\Immutable\FixedLengthBufferInterface;
 use Charcoal\Contracts\Buffers\Immutable\ImmutableBufferInterface;
 use Charcoal\Contracts\Security\Encoding\CipherDataEncoderInterface;
 
@@ -17,9 +16,9 @@ use Charcoal\Contracts\Security\Encoding\CipherDataEncoderInterface;
  */
 interface EncryptedStringInterface extends ImmutableBufferInterface, CipherDataEncoderInterface
 {
-    public function iv(): FixedLengthBufferInterface;
+    public function iv(): CryptoTokenBufferInterface;
 
     public function kid(): string;
 
-    public function tag(): ?FixedLengthBufferInterface;
+    public function tag(): ?CryptoTokenBufferInterface;
 }
