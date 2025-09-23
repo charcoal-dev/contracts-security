@@ -18,9 +18,29 @@ use Charcoal\Contracts\Security\Secrets\SecretsUtilityInterface;
  */
 interface CipherProviderInterface extends SecretsUtilityInterface
 {
-    public function encryptString(SecretKeyInterface $key, string $input): EncryptedStringInterface;
+    /**
+     * Encrypts a string using the specified algorithm and secret key.
+     */
+    public function encryptString(
+        CipherAlgorithmInterface $algo,
+        SecretKeyInterface       $key,
+        string                   $input
+    ): EncryptedStringInterface;
 
-    public function encryptObject(SecretKeyInterface $key, object $input): EncryptedObjectInterface;
+    /**
+     * Encrypts an object using the specified algorithm and secret key.
+     */
+    public function encryptObject(
+        CipherAlgorithmInterface $algo,
+        SecretKeyInterface       $key,
+        object                   $input
+    ): EncryptedObjectInterface;
 
-    public function decrypt(EncryptedStringInterface $input): string|object;
+    /**
+     * Decrypts an encrypted string using the specified algorithm and secret key.
+     */
+    public function decrypt(
+        CipherAlgorithmInterface $algo,
+        EncryptedStringInterface $input
+    ): string|object;
 }
