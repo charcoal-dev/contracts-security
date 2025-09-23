@@ -15,6 +15,9 @@ use Charcoal\Contracts\Buffers\Sensitive\SensitiveKeyBufferInterface;
  */
 interface SecretKeyInterface extends SensitiveKeyBufferInterface
 {
+    /** Compound of secret ID and version */
+    public function ref(): string;
+
     public function id(): string;
 
     public function version(): int;
